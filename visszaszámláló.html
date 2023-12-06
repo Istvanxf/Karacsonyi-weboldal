@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karácsonyi weboldal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>KARÁCSONY</h1>
+  </header>
+
+  <nav>
+    <a href="főoldal.html">Főoldal</a>
+    <a href="karácsonyfák.html">Karácsonyfák</a>
+    <a href="elerhetoseg.html">Elérhetőség</a>
+    <a href="visszaszámláló.html">Visszaszámláló</a>
+    <a href="receptek.html">Receptek</a>
+  </nav>
+
+  <div id="content" class="nagy">
+   <center><h1>Visszaszámlálás karácsonyig</h1></center>
+   <center><div id="countdown"></div></center>
+  </div>
+  
+  <script>
+  const targetDate = new Date('2023-12-24T00:00:00');
+  
+  function updateCountdown() {
+    const currentDate = new Date();
+    const timeDifference = targetDate - currentDate;
+  
+    if (timeDifference <= 0) {
+      document.getElementById('countdown').innerHTML = 'A téliszünet elkezdődött!';
+    } else {
+      const weeks = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
+      const days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+  
+      const formattedWeeks = formatNumber(weeks);
+      const formattedDays = formatNumber(days);
+      const formattedHours = formatNumber(hours);
+      const formattedMinutes = formatNumber(minutes);
+      const formattedSeconds = formatNumber(seconds);
+  
+      document.getElementById('countdown').innerHTML = `${formattedWeeks} hét ${formattedDays} nap ${formattedHours} óra ${formattedMinutes} perc ${formattedSeconds} mp van hátra`;
+    }
+  }
+  
+  function formatNumber(number) {
+    return number.toLocaleString('en-US', { minimumIntegerDigits: 2,});
+  }
+  
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+  
+  </script>
+  
+
+
+
+
+
+
+</body>
+</html>

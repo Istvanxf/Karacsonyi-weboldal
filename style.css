@@ -1,0 +1,73 @@
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(hatterkep2.jpg);
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  img {
+    width: 400px;
+  
+  
+  }
+
+  header {
+    background-color: darkred;
+    color: lightblue;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav {
+    background-color: brown;
+    color: lightblue;
+    padding: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    margin: 0 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .kep-irassal {
+    text-align: justify;
+  }
+
+  .kep-irassal {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .white_bg 
+{
+    background-color: black;
+    padding: 3px;
+}
+
+.nagy {
+  font-size: 21px;
+}
+
+
+.brd {
+  border: 3px;
+  border-style: groove;
+  border-color: #FFFDD0;
+  margin-left: 25px;
+}
+
+#fa {
+  height: 400px;
+}
